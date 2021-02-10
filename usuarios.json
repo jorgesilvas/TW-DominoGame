@@ -1,0 +1,48 @@
+{
+    "usuarios": [
+        {
+            "nick": "asdas",
+            "pass": "0aa1ea9a5a04b78d4581dd6d17742627"
+        },
+        {
+            "nick": "asdasasd",
+            "pass": "bff149a0b87f5b0e00d9dd364e9ddaa0"
+        },
+        {
+            "nick": "sss",
+            "pass": "0aa1ea9a5a04b78d4581dd6d17742627"
+        },
+        {
+            "nick": "comida",
+            "pass": "202cb962ac59075b964b07152d234b70"
+        },
+        {
+            "nick": "comida3",
+            "pass": "caf1a3dfb505ffed0d024130f58c5cfa"
+        },
+        {
+            "nick": "basd",
+            "pass": "7815696ecbf1c96e6894b779456d330e"
+        },
+        {
+            "nick": "qas",
+            "pass": "7815696ecbf1c96e6894b779456d330e"
+        },
+        {
+            "nick": "dasdasd",
+            "pass": "7815696ecbf1c96e6894b779456d330e"
+        },
+        {
+            "nick": "asdaeqw",
+            "pass": "7815696ecbf1c96e6894b779456d330e"
+        },
+        {
+            "nick": "Leproso",
+            "pass": "202cb962ac59075b964b07152d234b70"
+        },
+        {
+            "nick": "leproso",
+            "pass": "65ded5353c5ee48d0b7d48c591b8f430"
+        }
+    ]
+}

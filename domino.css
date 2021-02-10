@@ -1,0 +1,538 @@
+@keyframes bounce {
+    0%, 20%, 60%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    80% {
+      transform: translateY(-10px);
+    }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+#ranking2{
+  color:black;
+}
+#divContent{
+ font-size:75px;
+ text-align: center;
+ overflow: auto;
+ white-space: nowrap;
+}
+#divContentonline{
+  font-size:75px;
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+#jogoAdversario{
+  height:15%;
+  width: 93%;
+  font-size:60px;
+  overflow-x:auto;
+  white-space: nowrap;
+}
+#jogoAdversarioOnline{
+  height:15%;
+  width: 93%;
+  font-size:60px;
+  overflow-x:auto;
+  white-space: nowrap;
+}
+#jogoPlayer{
+  height:15%;
+  width:93%;
+  font-size:69px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+body{
+  background-image:url("background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  font-family: "Trebuchet MS", arial, sans-serif;
+}
+
+l{
+font-size: 17px;
+color:black;
+}
+
+
+o{
+  font-weight: 600;
+  font-size: 20px;
+  color:black;
+}
+
+iu{
+  font-weight: 600;
+  font-size: 20px;
+  color:black;
+  margin-left: 33%;
+}
+ui{
+  font-weight: 600;
+  font-size: 20px;
+  color:black;
+  margin-left: 5%;
+}
+
+table, td, th {
+  border: 0px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  height: 100px;
+}
+tr:hover {background-color: #f5f5f5;}
+
+
+.t{
+  font-size: 25px;
+  color:white;
+}
+.login{
+  margin-left:12%;
+}
+.lengthlogin{
+    padding:4px;
+    height:14px;
+    width:110px;
+}
+.modeC{
+  font-size:17px;
+  color:white;
+  margin-left:7.75%;
+}
+.btn{
+  border:0px solid black;
+  background-color:transparent;
+  cursor:pointer;
+  border-radius:50%;
+}
+.btn:hover {
+  animation: bounce 1s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.5s;
+}
+.monte{
+  display: block;
+  margin-left: 44%;
+  border:0px solid black;
+  background-color:transparent;
+  cursor:pointer;
+  border-radius:50%;
+  visibility: visible;
+}
+.btndis{
+  margin-left:39%;
+  padding: 15px 25px;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background-color: #000000;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0px 9px #999;
+}
+.btndis:hover {
+  background-color: #ffffff;
+  color:#000000;
+}
+.btndis:active {
+  background-color: #ffffff;
+  color:#000000;
+  box-shadow: 0 5px #666;
+  transform: translateY(12px);
+}
+.btningame{
+  border:0px solid black;
+  background-color:transparent;
+  cursor:pointer;
+  border-radius:50%;
+  position: fixed;
+  margin-left: 75%;
+}
+.btnpassar{
+  border:0px solid black;
+  background-color:transparent;
+  cursor:pointer;
+  border-radius:50%;
+  position: fixed;
+  margin-left: 64%;
+  margin-top: -4%;
+}
+.btnpassar:hover{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.center{
+  text-align: center;
+}
+.surrbtn{
+  border:0px solid black;
+  background-color:transparent;
+  cursor:pointer;
+  border-radius:50%;
+  position: fixed;
+  margin-left: 64%;
+  margin-top: -5%;
+}
+.surrbtn:hover{
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+.btnRegras{
+  color:white;
+  cursor:pointer;
+  border:0px solid black;
+  background-color:transparent;
+  margin-left:36px;
+  border-radius:50%;
+}
+
+.btnClassif{
+  color:white;
+  cursor:pointer;
+  border:0px solid black;
+  background-color:transparent;
+  margin-left:35px;
+  border-radius:50%;
+}
+/*MODAL GERAL*/
+.modalGeral {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  padding-top: 100px;
+  padding-bottom: 100vh;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0,0,0,0.1);
+}
+/*surrender Modal*/
+.modalsurr-content{
+  background-color: #000000;
+  margin-left:25vw;
+  margin-top: 10vw;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 2%;
+  width: 30%;
+  height:20%;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.sim{
+  cursor:pointer;
+  margin-left:5vw;
+}
+.nao{
+  cursor:pointer;
+  margin-left:5vw;
+}
+/*REGISTER MODAL*/
+.modalR-content {
+  background-color: #F2F2F2;
+  margin-left:38vw;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 2%;
+  width: 20%;
+  height:80%;
+  overflow-y: auto;
+  color: black;
+}
+.modalR-header {
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
+  border-radius: 2%;
+}
+.modalR-body {
+  padding: 2px 16px;
+  color:black;
+  background-color: white ;
+}
+.formReg{
+  padding:2px;
+  height:20px;
+  width:300px;
+}
+.registoBtn{
+  background-color: #000000;
+  color:white;
+  font-size: 18px;
+  height:28px;
+  width:307px;
+  border:2px solid #000000;
+  cursor:pointer;
+}
+.registoBtn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.5s;
+}
+/*JOGAR OFFLINE MODAL*/
+.modalJogoOff {
+  display: none;
+  position:absolute;
+  left: 0;
+  top: 0;
+  margin-top:3%;
+  margin-left: 25%;
+  width: 72%;
+  height: 91%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0,0,0,0.6);
+}
+.modal-contentJogooOff {
+  background-image:url("tabuleiro3.jpg");
+  border-radius: 2%;
+  padding: 20px;
+  width: 100%;
+  height:127%;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+}
+.modalerros{
+  visibility: hidden;
+  position:absolute;
+  background-color:rgb(0,0,0,0);
+  margin-left:20vw;
+  margin-top: 0%;
+  padding: 20px;
+  border-radius: 2%;
+  width: 20%;
+  height:5%;
+  color: red;
+}
+/* REGRAS MODAL*/
+.modal-content {
+  background-color: #F2F2F2;
+  margin-left:28vw;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 2%;
+  width: 65%;
+  height:80%;
+  overflow-y: auto;
+  color: black;
+}
+.modal-content p{
+  margin-left: 10px;
+}
+/* MODEL CLASSIFICAÇÓES*/
+.modalClassificacao-content{
+  background-color: #E6E6E6;
+  margin-left:35vw;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 2%;
+  width: 25%;
+  height:80%;
+  color: black;
+}
+.modalClassificacao-heade{
+  color: black;
+  font-weight: bold;
+  border-radius: 2%;
+}
+.imgQuadroHonra{
+  width:55px ;
+  height:35px ;
+
+}
+nic{
+  font-size: 20px;
+}
+/*MODAL VENCEU*/
+.modalganhou{
+    background-color:rgb(0,0,0,0.5);
+    margin-left:24vw;
+    padding: 20px;
+    border-radius: 2%;
+    width: 73%;
+    height:80%;
+    color: white;
+}
+.winimage1{
+  height: 300px;
+  width: 250px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  margin-top: 12%;
+  margin-left: 55%;
+  z-index: 1;
+}
+.winimage2 {
+  margin-top: 8%;
+  margin-left: 32%;
+  height: 200px;
+  width: 450px;
+  position: absolute;
+  margin-left: 46%;
+  left: 40px;
+  top: 10px;
+}
+/*MODAL PERDEU*/
+.modalperdeu{
+  background-color:rgb(0,0,0,0.5);
+  margin-left:24vw;
+  padding: 20px;
+  border-radius: 2%;
+  width: 73%;
+  height:80%;
+  color: white;
+}
+.loseimage1{
+  margin-top: 13%;
+  margin-left: 29%;
+  height: 170px;
+  width: 160px;
+  position: absolute;
+  z-index:1;
+}
+.loseimage2{
+  margin-top: -7%;
+  margin-left: 19.75%;
+  height: 550px;
+  width: 450px;
+  position: absolute;
+}
+/*MODAL ESCOLHA*/
+.modalchoice{
+  background-color:rgb(0,0,0,0.5);
+  margin-left:50vw;
+  margin-top: 8%;
+  padding: 20px;
+  border-radius: 2%;
+  width: 21%;
+  height:28%;
+  color: white;
+}
+.btnschoice{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.choiceimage{
+  margin-top: 8%;
+  height: 110px;
+  width: 95px;
+}
+.btnesq{
+  background-color: transparent;
+  margin-left: -10%;
+  color:white;
+  font-size:25px;
+  border: 0px solid black;
+  font-weight: 700;
+  }
+.btndir{
+  background-color: transparent;
+  color:white;
+  font-size:25px;
+  border: 0px solid black;
+  font-weight: 700;
+}
+/* The Close Button */
+.close {
+  color: whitesmoke;
+  float: right;
+  font-size: 2vw;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  position: absolute;
+  cursor: pointer;
+}
+.close2{
+  color: red;
+  float: right;
+  font-size: 2vw;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+/*Table do jogo*/
+.gamemode{
+  font-family: monospace;
+  font-size: 16px;
+}
+.modalIdGame{
+  background-color:rgb(0,0,0,0);
+  margin-left:23vw;
+  margin-top: 15%;
+  padding: 20px;
+  border-radius: 2%;
+  width: 40%;
+  height:28%;
+  color: white;
+}
+.sairconta{
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border:none;
+}
+#shownick{
+  visibility: hidden;
+  position:absolute;
+  background-color:rgb(0,0,0,1);
+  margin-left:5vw;
+  padding: 20px;
+  border-radius: 2%;
+  width: 20%;
+  height:15%;
+  color:white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+
+}
+
+.jogoPlayer1{
+    font-size:69px;
+}

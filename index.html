@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Domino FCUP</title>
+    <link rel="stylesheet" type="text/css" href="domino.css" />
+  <div id="erros" class="modalerros">
+    <div id="closebtn">
+    </div>
+    <span class="close2" onclick="closeSpan('erros')">&times;</span>
+  </div>
+  </head>
+<body>
+  <header>
+    <img src="domino2.png" height="180" width="210" style="margin-left:142px"  >
+  </header>
+  <div id="shownick">
+    <div id="shownick2">
+    </div>
+    <button class="sairconta" value="Refresh Page" onClick="window.location.reload()"> Sair da conta</button>
+  </div>
+
+    <div class="login">
+      <input id="nickname" type="text" class="lengthlogin" placeholder="Utilizador" name="nickname"><br>
+      <br>
+      <input id="pass" type="password" class="lengthlogin" placeholder="Senha" name="pass" ><br>
+      <br>
+      <button style="cursor:pointer" onclick="login()">login</button>
+
+
+
+      <button style="cursor:pointer" onclick="register1ºtrabalho()">registar</button>
+
+      <div id="registerModal" class="modalGeral">
+        <span class="close" onclick="closeSpan('registerModal')">&times;</span>
+
+        <div class="modalR-content" style="z-index:5;">
+          <div class="modalR-header">
+            <h1 class="center"> Bem Vindo </h1>
+            <hr>
+          </div>
+
+
+          <div style="margin-top:50px">
+              <p><input id="newnickname" type="text" class="formReg"  placeholder="Utilizador..." name="newnickname"> <br></p>
+              <p><input id="newpass" type="password" class="formReg" placeholder="Senha..." name="newpass" ><br></p>
+          </div>
+
+          <button type="submit" class="registoBtn" onclick="registernew();" >Inscrever-me</button>
+          <div style="margin-top:50px">
+            <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!--BOTOES ONLINE E OFFLINE-->
+  <div class="modeC" style="margin-top:20px">
+
+      <br>
+      <button type="button" onclick="offline()" class="btn">
+        <img src="1.png" width="110" height="108">
+      </button>
+
+      <div id="jogarOffline" class="modalJogoOff">
+
+        <span class="close" onclick="closeSpan('jogarOffline')" style="margin-left:98%">&times;</span>
+        <div class="modal-contentJogooOff">
+          <div id="jogoAdversario" class="maoadversario">
+        </div>
+
+         <div>
+          <div>
+            <button  type="button" onclick="surrender()" class="surrbtn">
+              <img src="surrender.png" width="60" height="50">
+            </button>
+          </div>
+
+          <div id="surrenderModal" class="modalGeral">
+          <div class="modalsurr-content">
+            <h1 class=center style="font-size:18px">Tem a certeza que quer sair do jogo?</h1>
+            <br>
+            <button type="button" value="Refresh Page" onClick="window.location.reload()" class="sim">SIM</button>
+            <button type="submit" onclick="closeSpan('surrenderModal')" class="nao">NÃO</button>
+          </div>
+          </div>
+        </div>
+
+
+
+          <div style="height:60%" >
+            <hr>
+            <div>
+            <button id="mnt" onclick="iraomonte(nossojogo)" class="monte">
+              <img id="monte2" src="monte.png" width="110" height="95">
+            </button>
+            <br>
+            </div>
+            <button type="button" onclick = "this.style.visibility= 'collapse';inicio()" class="btndis" >
+            Distribuir peças
+            </button>
+
+            <div id="divContent" style="height:140px;">
+              <div id="divContenttext">
+
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <div id="jogoPlayer">
+          </div>
+
+          <div>
+            <button  id="passar" class="btnpassar">
+              <img src="seta.png"  width="45" height="45">
+            </button>
+          </div>
+
+        </div>
+      </div>
+      <button type="button" onclick="online()" class="btn">
+        <img src="2.png" width="115" height="104" >
+      </button>
+
+      <div id="jogarOnline" class="modalJogoOff">
+
+        <span class="close" onclick="closeSpan('jogarOnline')" style="margin-left:98%">&times;</span>
+        <div class="modal-contentJogooOff">
+          <div id="jogoAdversarioOnline" class="maoadversario">
+        </div>
+
+         <div>
+          <div>
+            <button  id="leave2" type="button" class="surrbtn">
+              <img src="surrender.png" width="60" height="50">
+            </button>
+          </div>
+
+          <div id="leave" class="modalGeral">
+          <div class="modalsurr-content">
+            <h1 class=center style="font-size:18px">Tem a certeza que quer sair do jogo?</h1>
+            <br>
+            <button type="button" value="Refresh Page" onClick="window.location.reload()" class="sim">SIM</button>
+            <button type="submit" onclick="closeSpan('surrenderModal')" class="nao">NÃO</button>
+          </div>
+          </div>
+        </div>
+
+
+
+          <div style="height:60%" >
+            <hr>
+            <div>
+            <button id="mnt2" onclick="iraomonteonline(maoplayer)" class="monte">
+              <img id="monte" src="monte.png" width="110" height="95">
+            </button>
+            <br>
+            </div>
+            <button type="button" onclick = "this.style.visibility= 'collapse';chosegameid()" class="btndis" >
+             Conectar Jogo !
+            </button>
+            <div id="gameId" class="modalGeral">
+              <div class="modalIdGame">
+              <input id="groupId" type="text" class="formReg"  placeholder="Game ID...">
+              <button style="cursor:pointer" type="submit" onclick="closeSpan('gameId');prejoin()"> SUBMIT </button>
+            </div>
+          </div>
+            <div id="divContentonline" style="height:140px;">
+              <div id="divContenttextonline">
+
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <div id="jogoPlayerOnline" class="jogoPlayer1">
+          </div>
+
+          <div>
+            <button  id="passarvezonline" class="btnpassar">
+              <img src="seta.png"  width="45" height="45">
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+      <br>
+
+    <div id="ganhoumodal" class="modalGeral">
+      <span class="close" onClick="window.location.reload()">&times;</span>
+      <div class="modalganhou">
+        <img src="win.png" class="winimage1">
+        <img src="win2.png" class="winimage2">
+        <h1 class="center" style="font-family:verdana;text-shadow: 8px 6px 6px grey;"><br><br><br><br><br><br><br><br><br>VENCEU!</h1>
+      </div>
+    </div>
+
+    <div id="perdeumodal" class="modalGeral">
+      <span class="close" onClick="window.location.reload()">&times;</span>
+      <div class="modalperdeu">
+        <img src="lose.png" class="loseimage1">
+        <img src="lose2.png" class="loseimage2">
+        <h1 class="center" style="font-family:verdana;text-shadow: 8px 6px 6px grey;"><br><br><br><br><br><br><br><br><br>PERDEU!</h1>
+      </div>
+    </div>
+
+    <div id="choicemodal" class="modalGeral">
+      	<span class="close" onclick="closeSpan('choicemodal')">&times;</span>
+      	<div class="modalchoice">
+          <div class="center">Prefere jogar no lado</div>
+          <div class="btnschoice">
+            <button id="esc-esq" class="btnesq" >Esquerdo</button>
+            <img src="choice.png" class="choiceimage">
+            <button  id="esc-dir" class="btndir" >Direito</button>
+          </div>
+        </div>
+    </div>
+  <br>
+  <br>
+
+  <div>
+    <br><br>
+
+    <div style="position:absolute;">
+      <button  onclick="regras()" class="btnRegras" >
+        <img src="pergaminho1.png" width="47" height="45">
+        <br>
+        Regras
+      </button>
+      <button id="ranking" onclick="classificacao()" class="btnClassif">
+        <img src="trofeus.png" width="70" height="55">
+        <br>
+        Classifições
+      </button>
+    </div>
+
+
+    <div id="myModal" class="modalGeral">
+      <span class="close" onclick="closeSpan('myModal')">&times;</span>
+
+      <div class="modal-content">
+        <h2 style="color:black;">Intruções</h2>
+        <ul>
+          <li><b>Peças</b> - 28 peças com lados pontuados de 0 a 6.</li>
+          <li><b>Distribuição</b> - 7 peças para cada jogador. 14 peças no monte (para serem compradas).</li>
+          <li><b>Objetivo</b> - Fazer 100 pontos.</li>
+        </ul>
+
+          <h2>Definições</h2>
+          <p>
+            <b>Peça de dominó</b> - É uma peça composta por duas pontas, cada uma com um número (exemplos de peças: 2-5, 6-6, 0-1).
+            <br><b>Monte</b> - Após a distribuição das peças para os jogadores, as 14 peças que sobram formam o monte, que é onde os jogadores poderão comprar durante a partida.
+            <br><b>Encaixar peça</b> - Quando uma peça é colocada ao lado de outra que tem pelo menos um número em comum (exemplo: 2-5 encaixa com 5-6).
+            <br><b>Extremidades do jogo</b> - São as peças livres das duas pontas do jogo, cujos lados estão em aberto para que outras peças sejam encaixadas.
+            <br><b>Comprar peça</b> - Quando o jogador não tem nenhuma peça que encaixe em qualquer extremidade.
+            <br><b>Passar a vez</b> - Quando o jogador não tem nenhuma peça para colocar numa das extremidades e o monte está vazio.
+            <br><b>Jogo bloqueado</b> - Quando nenhum jogador nao tem nenhuma peça que encaixe numa das extremidades.
+            <br><b>Bloquear o jogo</b> - Quando um jogador joga uma peça para bloquear o jogo.
+            <br><b>Bater o jogo</b> - Quando um dos jogadores consegue ficar sem peças na mão, tendo colocado todas as que possui.
+            <br>
+            <br>
+              &nbsp;&nbsp;&nbsp;&nbsp; As peças são baralhadas na mesa, cada jogador pega 7 peças para jogar. O jogador que começa a partida é o que tem a dupla maior (6-6, 5-5, 4-4...),
+              se nenhum jogador possuir nenhuma peça dupla, começa quem tiver a peça com valor mais alto (6-5, 6-4...).
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Inicia-se a partida colocando esta peça no centro da mesa. A partir daí, joga-se no sentido anti-horário. Cada jogador tenta encaixar uma peça sua numa das extremidade do jogo, uma em cada jogada.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Caso o jogador não tenha nenhuma peça que encaixe numa das extremidades do jogo deve comprar peças do monte até que encontre uma peça que encaixe. Se o monte estiver vazio, passa a vez ao próximo jogador.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;A partida pode terminar em duas circustâncias:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>1</b>- Quando um jogador consegue bater o jogo, ou quando o jogo fica bloqueado.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>2</b>- Após a primeira partida, os jogadores alternam a vez de quem inicia cada jogo.
+          </p>
+          <h2>Contagem de Pontos </h2>
+          <p>
+              &nbsp;&nbsp;&nbsp;&nbsp;Caso algum jogador tenha batido o jogo, obtem todos os pontos das peças que estão na mão do adversário. Caso o jogo fique bloqueado, conta-se todos os pontos conseguidos por cada jogador.
+              O jogador que possuir menos pontos é o vencedor e leva todos os pontos do adversário.
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;Caso haja um empate nesta contagem de pontos, o jogador que bloqueou o jogo perde e o vencedor leva todos
+            os pontos deste jogador. Os pontos do vencedor são acumulados e o jogo termina quando alguém atinge a marca de 100 pontos.
+          </p>
+          <h2>Pontuação</h2>
+          <p>
+            &nbsp;&nbsp;&nbsp;&nbsp;A pontuação de cada peça corresponde à soma dos valores das duas pontas da peça. Dessa forma, a peça 0-0 vale 0 pontos, a peça 3-4 vale 7 pontos,
+            a peça 6-6 vale 12 pontos e assim por diante.
+          </p>
+      </div>
+      </div>
+      <div id=leaderModal class="modalGeral">
+        <span class="close" onclick="closeSpan('leaderModal')">&times;</span>
+
+        <div class="modalClassificacao-content">
+          <div class="modalClassificacao-header">
+            <h2 class="center"> Quadro de Honra </h2>
+            <o> NICKS </o>
+            <iu> VITÓRIAS </iu>
+            <ui> JOGOS </ui>
+              <hr>
+          </div>
+          <div id="ranking2">
+            <table id="rankingboard" class"table">
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <br>
+          </div>
+        </div>
+      </div>
+ </div>
+ <script type="text/javascript" src="second.js"></script>
+<script type="text/javascript" src="extensao.js"></script>
+</body>
+</html>
